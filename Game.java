@@ -34,8 +34,8 @@ public class Game extends Applet implements Runnable, KeyListener, MouseListener
 	AudioPlayer menuSel = new AudioPlayer("menu_select.wav");
 	AudioPlayer menuCon = new AudioPlayer("menu_confirm.wav");
 	AudioPlayer robotSound = new AudioPlayer("robot sound.wav");
-	AudioPlayer bgm1 = new AudioPlayer("Flying_Lab.wav");
-	AudioPlayer bgm2 = new AudioPlayer("oozla.wav");
+	//AudioPlayer bgm1 = new AudioPlayer("Flying_Lab.wav");
+	//AudioPlayer bgm2 = new AudioPlayer("oozla.wav");
 
 	
 	//Game States
@@ -101,12 +101,12 @@ public class Game extends Applet implements Runnable, KeyListener, MouseListener
 			
 			if(gameState == STATE.MENU){
 			//Perform menu commands
-				bgm1.loop();
+				//bgm1.loop();
 			}
 			
 			if((gameState == STATE.GAMEOVER) || (gameState == STATE.VICTORY)){
 			//Reset game
-				bgm2.stop();
+				//bgm2.stop();
 				hud.setHealth(hud.getMaxHealth());
 				p.setX(500);
 				robotArmy = new Robot[]{
@@ -132,7 +132,7 @@ public class Game extends Applet implements Runnable, KeyListener, MouseListener
 			
 			if(gameState == STATE.GAME){
 			//Perform the in game actions
-				bgm2.loop();
+				//bgm2.loop();
 				
 				//PLAYER CONTROLS
 				if(ltPressed){
@@ -519,7 +519,7 @@ public class Game extends Applet implements Runnable, KeyListener, MouseListener
 			if (mouseOver(mx, my, menu.getStart())){
 				gameState = STATE.GAME;
 				menuCon.play();
-				bgm1.stop();
+				//bgm1.stop();
 			}
 			
 			else if(mouseOver(mx, my, menu.getHelp())){
